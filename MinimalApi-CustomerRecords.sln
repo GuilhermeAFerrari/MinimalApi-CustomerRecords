@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3B0B600-7E66-4C81-8387-F03280AE2B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalApi-CustomerRecords", "src\MinimalApi-CustomerRecords\MinimalApi-CustomerRecords.csproj", "{4307FAA1-00B7-4AA3-A23D-B8C5EDEE59ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4307FAA1-00B7-4AA3-A23D-B8C5EDEE59ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4307FAA1-00B7-4AA3-A23D-B8C5EDEE59ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4307FAA1-00B7-4AA3-A23D-B8C5EDEE59ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4307FAA1-00B7-4AA3-A23D-B8C5EDEE59ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4307FAA1-00B7-4AA3-A23D-B8C5EDEE59ED} = {B3B0B600-7E66-4C81-8387-F03280AE2B0F}
+	EndGlobalSection
+EndGlobal

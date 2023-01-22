@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using MinimalApi_CustomerRecords.Data;
 using MinimalApi_CustomerRecords.Models;
 using MiniValidation;
+using NetDevPack.Identity;
+using NetDevPack.Identity.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MinimalContextDb>(options =>
     options.UseSqlServer(builder.Configuration["DefaultConnection"]));
+
+builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
+    options.UseSqlServer(builder.Configuration["DefaultConnection"],
+    b => b.MigrationsAssembly("MinimalApi_CustomerRecords")));
+
+builder.Services.AddIdentityConfiguration();
+builder.Services.AddJwtConfiguration(builder.Configuration, "AppSettings");
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -17,6 +27,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseAuthConfiguration();
 
 app.UseHttpsRedirection();
 

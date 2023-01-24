@@ -86,7 +86,6 @@ app.Run();
 
 void MapActions(WebApplication app)
 {
-
     app.MapPost("/register", [AllowAnonymous] async (
         UserManager<IdentityUser> userManager,
         IOptions<AppJwtSettings> appJwtSettings,

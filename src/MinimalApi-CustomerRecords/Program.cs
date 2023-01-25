@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen(c =>
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "Insira o token JWT desta maneira: Bearer {seu token}",
+        Description = "Insert the JWT token: Bearer {your token}",
         Name = "Authorization",
         Scheme = "Bearer",
         BearerFormat = "JWT",
@@ -57,9 +57,12 @@ builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
     b => b.MigrationsAssembly("MinimalApi-CustomerRecords")));
 
 builder.Services.AddIdentityConfiguration();
-builder.Services.AddJwtConfiguration(builder.Configuration, "AppSettings");
+builder.Services.AddJwtConfiguration(builder.Configuration, "Jwt");
 
-builder.Services.AddAuthorization(options => options.AddPolicy("DeleteCustomer", policy => policy.RequireClaim("DeleteCustomer")));
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("DeleteCustomer", policy => policy.RequireClaim("DeleteCustomer"));
+});
 
 var app = builder.Build();
 
